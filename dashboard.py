@@ -61,11 +61,11 @@ with col1:
     option = st.selectbox("Year:", year)
     if option == 'all':
         result = d1.groupby(['fullname']).sales.sum().reset_index().sort_values(by=['sales'], ascending=False)
-        fig1 = px.bar(result,y='fullname',x='sales',color='fullname',color_discrete_sequence=px.colors.sequential.Darkmint,height=450,width=500, text_auto='.2s')
+        fig1 = px.bar(result,y='fullname',x='sales',color='fullname',color_discrete_sequence=px.colors.sequential.Darkmint,height=450,width=650, text_auto='.2s')
         fig1.update_layout(xaxis_title='Revenue Generated ($)',yaxis_title=' ', showlegend = False)
         st.plotly_chart(fig1)
     result = d1[d1.year_order==option].sort_values(by=['sales'], ascending=False)
-    fig1 = px.bar(result,y='fullname',x='sales',color='fullname',color_discrete_sequence=px.colors.sequential.Darkmint,height=450,width=500, text_auto='.2s')
+    fig1 = px.bar(result,y='fullname',x='sales',color='fullname',color_discrete_sequence=px.colors.sequential.Darkmint,height=450,width=650, text_auto='.2s')
     fig1.update_layout(xaxis_title='Revenue Generated ($)',yaxis_title=' ', showlegend = False)
     st.plotly_chart(fig1)
 
@@ -87,10 +87,10 @@ with col3:
     option = st.selectbox("Teritory:", year)
     if option == 'all':
         result = d2.groupby(['name']).sales.sum().reset_index().sort_values(by=['sales'], ascending=False)
-        fig1 = px.bar(result,y='name',x='sales',color='name',color_discrete_sequence=px.colors.sequential.Darkmint,height=450,width=500, text_auto='.2s')
+        fig1 = px.bar(result,y='name',x='sales',color='name',color_discrete_sequence=px.colors.sequential.Darkmint,height=450,width=650, text_auto='.2s')
         fig1.update_layout(xaxis_title='Revenue Generated ($)',yaxis_title=' ', showlegend = False)
         st.plotly_chart(fig1)
     result = d2[d2.year_order==option].sort_values(by=['sales'], ascending=False)
-    fig1 = px.bar(result,y='name',x='sales',color='name',color_discrete_sequence=px.colors.sequential.Darkmint,height=450,width=500, text_auto='.2s')
+    fig1 = px.bar(result,y='name',x='sales',color='name',color_discrete_sequence=px.colors.sequential.Darkmint,height=450,width=650, text_auto='.2s')
     fig1.update_layout(xaxis_title='Revenue Generated ($)',yaxis_title=' ', showlegend = False)
     st.plotly_chart(fig1)
