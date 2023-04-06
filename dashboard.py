@@ -84,7 +84,7 @@ with col3:
     year = [int(i) for i in d1.year_order.unique()]
     year.sort()
     year.append('all')
-    option = st.selectbox("Year:", year)
+    option = st.selectbox("Year:  ", year)
     if option == 'all':
         result = d2.groupby(['name']).sales.sum().reset_index().sort_values(by=['sales'], ascending=False)
         fig1 = px.bar(result,y='name',x='sales',color='name',color_discrete_sequence=px.colors.sequential.Darkmint,height=450,width=650, text_auto='.2s')
