@@ -75,7 +75,7 @@ with col2:
     st.title('')
     st.title('')
     result = d1.groupby('year_order').sales.sum().reset_index()
-    fig3 = px.bar(result,y='sales',x='year_order',color='sales',color_discrete_sequence=px.colors.sequential.Darkmint,height=500,width=550, text_auto='.2s')
+    fig3 = px.bar(result,y='sales',x='year_order',color='sales',color_discrete_sequence=px.colors.sequential.Darkmint,height=500,width=650, text_auto='.2s')
     fig3.update_layout(xaxis_title='Year',yaxis_title='Total Revenue Generated ($)', showlegend = False)
     st.plotly_chart(fig3)
 
